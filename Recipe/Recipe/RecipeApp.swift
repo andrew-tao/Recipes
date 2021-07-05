@@ -19,7 +19,7 @@ struct RecipeApp: App {
         WindowGroup {
             TabView {
                 NavigationView {
-                    RecipeView()
+                    SearchView()
                 }.tabItem {
                     Label("Search", systemImage: "magnifyingglass")
                 }
