@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		832B29BC2692C4C200418CF7 /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 832B29BB2692C4C200418CF7 /* SearchViewModel.swift */; };
+		832B29BF2692E33A00418CF7 /* Modifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 832B29BE2692E33A00418CF7 /* Modifiers.swift */; };
 		8339C2AA2669CE0000DD8D11 /* RecipeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8339C2A92669CE0000DD8D11 /* RecipeApp.swift */; };
 		8339C2AC2669CE0000DD8D11 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8339C2AB2669CE0000DD8D11 /* SearchView.swift */; };
 		8339C2AE2669CE0800DD8D11 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8339C2AD2669CE0800DD8D11 /* Assets.xcassets */; };
@@ -33,6 +34,7 @@
 
 /* Begin PBXFileReference section */
 		832B29BB2692C4C200418CF7 /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
+		832B29BE2692E33A00418CF7 /* Modifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Modifiers.swift; sourceTree = "<group>"; };
 		8339C2A62669CDFF00DD8D11 /* Recipe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Recipe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8339C2A92669CE0000DD8D11 /* RecipeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeApp.swift; sourceTree = "<group>"; };
 		8339C2AB2669CE0000DD8D11 /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
@@ -100,6 +102,7 @@
 			children = (
 				8339C2A92669CE0000DD8D11 /* RecipeApp.swift */,
 				832B29BD2692D26100418CF7 /* Search */,
+				832B29BE2692E33A00418CF7 /* Modifiers.swift */,
 				83C674572670003A00F02AEE /* Preferences.swift */,
 				83C673CC266E94B500F02AEE /* DetailView.swift */,
 				836466262673D9E700619D68 /* EditView.swift */,
@@ -216,6 +219,7 @@
 				836466112671E4E300619D68 /* SavedRecipes.swift in Sources */,
 				832B29BC2692C4C200418CF7 /* SearchViewModel.swift in Sources */,
 				8364661326729C4000619D68 /* NewMealView.swift in Sources */,
+				832B29BF2692E33A00418CF7 /* Modifiers.swift in Sources */,
 				8364660F2671E19800619D68 /* SavedView.swift in Sources */,
 				83C673CF266EC9FB00F02AEE /* PrettyButton.swift in Sources */,
 				8339C2BA2669D55500DD8D11 /* JSONResults.swift in Sources */,

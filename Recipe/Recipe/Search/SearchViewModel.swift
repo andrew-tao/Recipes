@@ -14,7 +14,7 @@ class SearchViewModel: ObservableObject {
     private static let byName = "https://www.themealdb.com/api/json/v1/1/search.php?s="
     static let byId = "https://www.themealdb.com/api/json/v1/1/lookup.php?i="
     
-    var searchText = "" { didSet {
+    @Published var searchText = "" { didSet {
             publisher.send(searchText)
         }
     }
@@ -68,6 +68,7 @@ class SearchViewModel: ObservableObject {
                 if (jsonResults == nil) {
                     return
                 }
+                
                 DispatchQueue.main.async {
                     self.results = Results(fromJSON: jsonResults!)
                 }
