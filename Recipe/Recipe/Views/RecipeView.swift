@@ -1,5 +1,5 @@
 //
-//  Recipe.swift
+//  RecipeView.swift
 //  Recipe
 //
 //  Created by Andrew Tao on 6/4/21.
@@ -7,12 +7,12 @@
 
 import SwiftUI
 
-struct Recipe: View {
+struct RecipeView: View {
     
     
     @EnvironmentObject var preferences: Preferences
     
-    // the names being different looks a bit dumb but I figured it's better to avoid similar names for confusion
+    // the names are different to avoid similar names for confusion
     var recipe: Meal
     
     init(recipe: Meal) {
@@ -50,7 +50,7 @@ struct Recipe: View {
 struct Recipe_Previews: PreviewProvider {
     @ObservedObject static var preferences = Preferences()
     static var previews: some View {
-        Recipe(recipe: Meal.sample)
+        RecipeView(recipe: Meal.sample)
             .previewLayout(.fixed(width: 400, height: 60))
             .environmentObject(Preferences())
     }

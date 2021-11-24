@@ -1,5 +1,5 @@
 /*
-    Uh I took this from Apple Developer
+    Code copied from Apple Developer
 */
 
 import SwiftUI

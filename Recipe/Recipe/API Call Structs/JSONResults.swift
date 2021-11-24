@@ -18,7 +18,7 @@ struct JSONMeal : Codable {
     var strMealThumb: String?
     var strYoutube: String?
     
-    // I wish I was kidding but this is literally how the json is formatted for all of the api calls >:(
+    // I wish I was kidding but this is how the json is formatted for all of the api calls
     var strIngredient1: String?
     var strIngredient2: String?
     var strIngredient3: String?
@@ -61,6 +61,6 @@ struct JSONMeal : Codable {
     var strMeasure19: String?
     var strMeasure20: String?
     
-    // the source can be null!!!!!! >:(
+    // the source can be null(?!)
     var strSource: String?
 }

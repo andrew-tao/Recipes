@@ -16,14 +16,14 @@ struct SearchView: View {
     
     var body: some View {
         VStack {
-            SearchBar(searchText: $viewModel.searchText) {
+            SearchBar(searchText: $viewModel.searchText, onClear:  {
                 viewModel.updateResults()
-            }
+            })
             
             List {
                 ForEach(viewModel.results?.meals ?? [Meal]()) { meal in
                     NavigationLink(destination: DetailView(meal: meal)) {
-                        Recipe(recipe: meal)
+                        RecipeView(recipe: meal)
                     }
                 }
             }

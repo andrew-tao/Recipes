@@ -89,14 +89,12 @@ class Meal : Codable, ObservableObject, Equatable, Identifiable {
         }
         self.groups = [IngredientPair]()
         
-        /* I know this looks like some kind of elaborate joke but unfortunately the
-         * TheMealDB returns all of the names and measurements for each of the 20
+        /* Unfortunately the TheMealDB returns all of the names and measurements for each of the 20
          * ingredients as individual parameters instead of a JSON array or object, and the
          * convention seems (there's no API doc) to be that whenever a recipe doesn't
          * require 20 ingredients, the remaining ingredients are just null. Creating an
          * entirely separate data structure to hold usable data from after parsing the
-         * JSON seemed like the only way to feasibly do anything, but if I'm missing
-         * something I would very much like to know because this took a long time :/. */
+         * JSON seemed like the only way to feasibly do anything. */
         
         if (Meal.isValid(jsonMeal.strIngredient1, jsonMeal.strMeasure1)) {
             groups.append(IngredientPair(ingredient: jsonMeal.strIngredient1!, measurement: jsonMeal.strMeasure1!))

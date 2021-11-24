@@ -14,20 +14,10 @@ struct DetailView: View {
     @EnvironmentObject var preferences: Preferences
     @EnvironmentObject var savedRecipes: SavedRecipes
     
-    @Environment(\.presentationMode) var mode: Binding<PresentationMode>
-    let navButtonString: String
-    let save: Bool
-    
     static let defaultURL = "https://www.youtube.com/watch?v=dQw4w9WgXcQ" // :)
     
-    init(meal: Meal?, save: Bool = true, isActive: Binding<Bool> = .constant(true)) {
+    init(meal: Meal?, save: Bool = true) {
         self.meal = meal
-        if save {
-            navButtonString = "Save Recipe"
-        } else {
-            navButtonString = "Delete Recipe"
-        }
-        self.save = save
     }
     
     var body: some View {
@@ -44,7 +34,6 @@ struct DetailView: View {
             
             List {
                 Section(header: Text("Ingredients")) {
-                    
                     ForEach(meal?.groups ?? [IngredientPair]()) { ingredientPair in
                         HStack {
                             Text(ingredientPair.ingredient).frame(alignment: .leading)
@@ -67,6 +56,7 @@ struct DetailView: View {
                     }
                 }
             }
+            
             HStack {
                 Button("Instructions") {
                     instructionsPresented = true
@@ -76,19 +66,16 @@ struct DetailView: View {
                 
                 Link("Source", destination: URL(string: meal?.strSource ?? DetailView.defaultURL) ?? URL(string: DetailView.defaultURL)!).buttonStyle(PrettyButton(buttonPreferences: $preferences.button))
             }
+            
         }.padding()
-        .navigationBarItems(trailing: Button(navButtonString) {
+        .navigationBarItems(trailing: Button("Save Recipe") {
             guard meal != nil else { return }
-            if (save) {
-                if !savedRecipes.recipes.contains(meal!){
-                    savedRecipes.recipes.append(meal!)
-                } else {
-                    return
-                }
+            if !savedRecipes.recipes.contains(meal!){
+                savedRecipes.recipes.append(meal!)
             } else {
-                savedRecipes.recipes.removeAll(where: {$0.id == meal!.id})
-                self.mode.wrappedValue.dismiss()
+                return
             }
+            
             savedRecipes.save()
         })
     }

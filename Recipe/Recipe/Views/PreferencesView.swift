@@ -27,7 +27,7 @@ struct PreferencesView: View {
             
             VStack {
                 Text("Sample Recipe Display")
-                Recipe(recipe: Meal.sample)
+                RecipeView(recipe: Meal.sample)
             }
             
             Spacer()
